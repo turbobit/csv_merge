@@ -2,6 +2,9 @@
 
 이메일 기준으로 CSV 파일을 합치거나 제거할 수 있는 웹 애플리케이션입니다.
 
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/f7a8282f-785d-40fe-aec5-792a157915bd" />
+
+
 ## 주요 기능
 
 - 📁 **파일 업로드**: 드래그앤드롭 또는 파일 선택으로 CSV 파일 업로드
