@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV 병합/제거 도구</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSV 병합/제거 도구</h1>
+            <p class="subtitle">이메일 기준으로 CSV 파일을 합치거나 제거할 수 있습니다</p>
+        </header>
+
+        <div class="main-content">
+            <!-- 파일 업로드 영역 -->
+            <div class="upload-section">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-content">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p class="drop-zone-text">파일을 드래그하여 여기에 놓거나</p>
+                        <label for="fileInput" class="file-input-label">파일 선택</label>
+                        <input type="file" id="fileInput" accept=".csv" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 미리보기 및 작업 영역 -->
+            <div class="work-section" id="workSection" style="display: none;">
+                <div class="preview-section">
+                    <h2>업로드된 데이터 미리보기 (상위 10개)</h2>
+                    <div class="table-container">
+                        <table id="previewTable">
+                            <thead>
+                                <tr>
+                                    <th>이름</th>
+                                    <th>이메일</th>
+                                </tr>
+                            </thead>
+                            <tbody id="previewBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="info-text" id="totalCount"></p>
+                </div>
+
+                <div class="action-section">
+                    <h2>작업 선택</h2>
+                    <div class="action-buttons">
+                        <button class="btn btn-merge" id="mergeBtn">합치기</button>
+                        <button class="btn btn-subtract" id="subtractBtn">빼기</button>
+                    </div>
+                    <div class="result-info" id="resultInfo" style="display: none;">
+                        <p id="resultText"></p>
+                    </div>
+                </div>
+
+                <div class="download-section">
+                    <div class="merged-info" id="mergedInfo" style="display: none;">
+                        <p>현재 합쳐진 데이터: <strong id="mergedCount">0</strong>개</p>
+                    </div>
+                    <div class="download-buttons">
+                        <button class="btn btn-download" id="downloadBtn" disabled>정리된 데이터 다운로드</button>
+                        <button class="btn btn-reset" id="resetBtn">전체 초기화</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
